@@ -16,6 +16,9 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -73,11 +76,161 @@ fun BirthdayGreetingWithImage(message: String, from: String) {
     }
 }
 
+@Composable
+fun practiceArticle() {
+    val image = painterResource(id = R.drawable.bg_compose_background)
+    Column {
+        Image(
+            painter = image, contentDescription = null, modifier = Modifier
+                .fillMaxWidth()
+        )
+        Text(
+            text = "Jetpack Compose tutorial",
+            fontSize = 24.sp,
+            modifier = Modifier
+                .padding(8.dp),
+            textAlign = TextAlign.Justify
+        )
+        Text(
+            text = "Jetpack Compose is a modern toolkit or building native android UI. " +
+                    "Compose simplifies and accelerates UI development Jetpack Compose is a modern toolkit or building native android UI. \" +\n" +
+                    "                    \"Compose simplifies and accelerates UI development ",
+            modifier = Modifier
+                .padding(16.dp),
+            textAlign = TextAlign.Justify
+        )
+        Text(
+            text = "aaaaaassadwsadsadasdsdadasJetpack Compose is a modern toolkit or building native android UI. " +
+                    "Compose simplifies and accelerates UI development Jetpack Compose is a modern toolkit or building native android UI. \" +\n" +
+                    "                    \"Compose simplifies and accelerates UI development ",
+            modifier = Modifier
+                .padding(16.dp),
+            textAlign = TextAlign.Justify
+        )
+    }
 
-@Preview(showBackground = true)
+
+}
+
+@Composable
+fun practiceTaskManager() {
+    val image = painterResource(id = R.drawable.ic_task_completed)
+    Column(
+        modifier = Modifier
+            .fillMaxWidth()
+            .fillMaxHeight(),
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Center
+    ) {
+        Image(painter = image, contentDescription = null)
+
+        Text(
+            text = "All tasks completed", fontSize = 24.sp,
+            fontWeight = FontWeight.Bold,
+
+            modifier = Modifier
+                .padding(top = 24.dp, bottom = 8.dp),
+        )
+        Text(text = "Nice Work", fontSize = 16.sp, textAlign = TextAlign.Center)
+    }
+}
+
+@Composable
+fun practiceQuadrant() {
+    Column(Modifier.fillMaxWidth()) {
+        Row(Modifier.weight(1f)) {
+            Column(
+                Modifier
+                    .fillMaxSize()
+                    .background(Color.Green)
+                    .padding(16.dp)
+                    .weight(1f),
+                horizontalAlignment = Alignment.CenterHorizontally,
+                verticalArrangement = Arrangement.Center
+            ) {
+                Text(
+                    text = "1 Text Composable",
+                    fontWeight = FontWeight.Bold,
+                    modifier = Modifier.padding(bottom = 16.dp)
+                )
+                Text(
+                    text = "Displays text and follows Material Design guidelines.",
+                    fontFamily = FontFamily.Default,
+                    textAlign = TextAlign.Justify
+                )
+            }
+            Column( Modifier
+                .fillMaxSize()
+                .background(Color.Yellow)
+                .padding(16.dp)
+                .weight(1f),
+                horizontalAlignment = Alignment.CenterHorizontally,
+                verticalArrangement = Arrangement.Center
+            ) {
+                Text(
+                    text = "2 Text Composable",
+                    fontWeight = FontWeight.Bold,
+                    modifier = Modifier.padding(bottom = 16.dp)
+                )
+                Text(
+                    text = "Displays text and follows Material Design guidelines.",
+                    fontFamily = FontFamily.Default,
+                    textAlign = TextAlign.Justify
+                )
+            }
+        }
+        Row(Modifier.weight(1f)) {
+            Column(
+                Modifier
+                    .fillMaxSize()
+                    .background(Color.Cyan)
+                    .padding(16.dp).weight(1f),
+                horizontalAlignment = Alignment.CenterHorizontally,
+                verticalArrangement = Arrangement.Center
+            ) {
+                Text(
+                    text = "3 Text Composable",
+                    fontWeight = FontWeight.Bold,
+                    modifier = Modifier.padding(bottom = 16.dp)
+                )
+                Text(
+                    text = "Displays text and follows Material Design guidelines.",
+                    fontFamily = FontFamily.Default,
+                    textAlign = TextAlign.Justify
+                )
+            }
+            Column(
+                Modifier
+                    .fillMaxSize()
+                    .background(Color.LightGray)
+                    .padding(16.dp)
+                    .weight(1f),
+                horizontalAlignment = Alignment.CenterHorizontally,
+                verticalArrangement = Arrangement.Center
+            ) {
+                Text(
+                    text = "4 Text Composable",
+                    fontWeight = FontWeight.Bold,
+                    modifier = Modifier.padding(bottom = 16.dp)
+                )
+                Text(
+                    text = "Displays text and follows Material Design guidelines.",
+                    fontFamily = FontFamily.Default,
+                    textAlign = TextAlign.Justify
+                )
+            }
+        }
+    }
+}
+
+@Preview(showBackground = true,
+showSystemUi = true)
 @Composable
 fun BirthdayCardPreview() {
     HappyBirthdayTheme {
-        BirthdayGreetingWithImage(message = "Happy Birthday Alp", from = "Alex")
+        //BirthdayGreetingWithImage(message = "Happy Birthday Alp", from = "Alex")
+        practiceTaskManager()
+        //practiceArticle()
+        //practiceQuadrant()
     }
 }
