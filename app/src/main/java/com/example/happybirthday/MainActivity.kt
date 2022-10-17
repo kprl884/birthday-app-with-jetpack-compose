@@ -228,8 +228,8 @@ showSystemUi = true)
 @Composable
 fun BirthdayCardPreview() {
     HappyBirthdayTheme {
-        //BirthdayGreetingWithImage(message = "Happy Birthday Alp", from = "Alex")
-        practiceTaskManager()
+        BirthdayGreetingWithImage(message = "Happy Birthday Alp", from = "Alex")
+        //practiceTaskManager()
         //practiceArticle()
         //practiceQuadrant()
     }
